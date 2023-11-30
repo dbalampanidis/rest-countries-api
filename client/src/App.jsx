@@ -19,6 +19,7 @@ function App() {
   const navigate = useNavigate();
   const [noCountries, setNoCountries] = useState(null);
 
+  //needed for deployment branch
   const serverURL = process.env.REACT_APP_SERVER_URL;
 
   const fetchData = async (req, res) => {

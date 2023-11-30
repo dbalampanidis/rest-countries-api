@@ -19,9 +19,11 @@ function App() {
   const navigate = useNavigate();
   const [noCountries, setNoCountries] = useState(null);
 
+  const serverURL = process.env.REACT_APP_SERVER_URL;
+
   const fetchData = async (req, res) => {
     setLoading(true);
-    const response = await axios.get("http://localhost:5000/allCountries");
+    const response = await axios.get(`${serverURL}/allCountries`);
     const countries = response.data;
     setLoading(false);
     setCountries(countries);
@@ -42,9 +44,7 @@ function App() {
     //if search box is not empty, fetch country by name
     if (name) {
       const fetchSearch = async (req, res) => {
-        const fetchData = await axios.get(
-          `http://localhost:5000/countryByName/${name}`
-        );
+        const fetchData = await axios.get(`${serverURL}/countryByName/${name}`);
         const response = fetchData.data;
         //if country exists
         if (response.status !== 404) {

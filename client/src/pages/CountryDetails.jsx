@@ -23,11 +23,13 @@ const CountryDetails = ({ dark }) => {
     borders: [],
   });
 
+  const serverURL = process.env.REACT_APP_SERVER_URL;
+
   useEffect(() => {
     const fetchCountry = async (req, res) => {
       setLoading(true);
       const fetchData = await axios.get(
-        `http://localhost:5000/countryByName/${countryName}`
+        `${serverURL}/countryByName/${countryName}`
       );
       const country = fetchData.data;
       if (country.status !== 404) {

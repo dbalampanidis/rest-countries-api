@@ -9,10 +9,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "npm i && cd ../client && npm i & cd - ",
+    "build": "npm i && cd ../client && npm i & cd ../server ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node server.js",
-    "client": "cd ../client && npm start && cd -",
+    "client": "cd ../client && npm start && cd ../server",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],

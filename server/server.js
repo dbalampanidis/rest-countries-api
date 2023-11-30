@@ -25,5 +25,5 @@ app.get("/countryByName/:country", async (req, res) => {
 });
 
 app.listen(5000, () => {
-  console.log("server listening to port 5000");
+  console.log("Server listening on Port 5000");
 });

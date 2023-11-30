@@ -8,6 +8,7 @@ import {
 } from "react-icons/md";
 
 import Country from "./components/Country";
+import Footer from "./components/Footer";
 import CountryDetails from "./pages/CountryDetails";
 
 import "./App.css";
@@ -145,6 +146,7 @@ function App() {
                     )}
                   </section>
                 </div>
+                <Footer />
               </>
             )
           }

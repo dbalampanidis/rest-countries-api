@@ -1,7 +1,9 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 
 app.get("/allCountries", async (req, res) => {
   const response = await axios.get("https://restcountries.com/v3.1/all");
